@@ -3,6 +3,10 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import math
 import logging
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logging.getLogger('googleapiclient.discovery_cache').setLevel(logging.ERROR)
 logging.basicConfig(filename='spreadsheet_update.log', level=logging.INFO,
@@ -12,7 +16,18 @@ SCOPE = ["https://www.googleapis.com/auth/spreadsheets"]
 SPREADSHEET_ID = "1hoY87CzLOdPwfl31fR1gFkP7SJvvwz0Mm9_W5ht9OF8"
 CLEAR_RANGE = "engenharia_de_software!G4:H27"
 DATA_RANGE = "engenharia_de_software!A4:H27"
-SERVICE_ACCOUNT_FILE = 'token.json'
+SERVICE_ACCOUNT_INFO = {
+    "type": os.getenv("TYPE"),
+    "project_id": os.getenv("PROJECT_ID"),
+    "private_key_id": os.getenv("PRIVATE_KEY_ID"),
+    "private_key": os.getenv("PRIVATE_KEY").replace('\\n', '\n'),
+    "client_email": os.getenv("CLIENT_EMAIL"),
+    "client_id": os.getenv("CLIENT_ID"),
+    "auth_uri": os.getenv("AUTH_URI"),
+    "token_uri": os.getenv("TOKEN_URI"),
+    "auth_provider_x509_cert_url": os.getenv("AUTH_PROVIDER_X509_CERT_URL"),
+    "client_x509_cert_url": os.getenv("CLIENT_X509_CERT_URL")
+}
 
 
 def check_situation(tests_average, class_frequency):
@@ -79,7 +94,7 @@ def calculate_grades(creds):
         print(f"A general error occurred: {e}")
 
 def main():
-    creds = ServiceAccountCredentials.from_json_keyfile_name(filename=SERVICE_ACCOUNT_FILE, scopes=SCOPE)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(SERVICE_ACCOUNT_INFO, SCOPE)
     logging.info("Credentials loaded from service account file.")
     calculate_grades(creds)
 

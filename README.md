@@ -93,7 +93,7 @@ import logging
 import math
 ```
 
-* Package used to generate and update the log file:
+* Package used to generate and update the log file with the name 'spreadsheet_update.log":
 
 ```
 import logging

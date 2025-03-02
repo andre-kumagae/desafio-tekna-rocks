@@ -1,7 +1,4 @@
-import os.path
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
+from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import math
@@ -15,6 +12,7 @@ SCOPE = ["https://www.googleapis.com/auth/spreadsheets"]
 SPREADSHEET_ID = "1hoY87CzLOdPwfl31fR1gFkP7SJvvwz0Mm9_W5ht9OF8"
 CLEAR_RANGE = "engenharia_de_software!G4:H27"
 DATA_RANGE = "engenharia_de_software!A4:H27"
+SERVICE_ACCOUNT_FILE = 'token.json'
 
 
 def check_situation(tests_average, class_frequency):
@@ -27,7 +25,6 @@ def check_situation(tests_average, class_frequency):
     else:
         return "Approved"
 
-
 def clear_fields(sheet):
     try:
         clear_values = [["" for _ in range(2)] for _ in range(24)]
@@ -39,7 +36,6 @@ def clear_fields(sheet):
     except HttpError as err:
         logging.exception(f"An HTTP error occurred while clearing fields: {err}")
         print(err)
-
 
 def calculate_grades(creds):
     try:
@@ -82,27 +78,10 @@ def calculate_grades(creds):
         logging.exception(f"A general error occurred: {e}")
         print(f"A general error occurred: {e}")
 
-
 def main():
-    creds = None
-    if os.path.exists("token.json"):
-        creds = Credentials.from_authorized_user_file("token.json", SCOPE)
-        logging.info("Credentials loaded from token.json")
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-            logging.info("Credentials refreshed.")
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                "credentials.json", SCOPE
-            )
-            creds = flow.run_local_server(port=0)
-            logging.info("New credentials obtained.")
-        with open("token.json", "w") as token:
-            token.write(creds.to_json())
-            logging.info("Credentials saved to token.json")
+    creds = ServiceAccountCredentials.from_json_keyfile_name(filename=SERVICE_ACCOUNT_FILE, scopes=SCOPE)
+    logging.info("Credentials loaded from service account file.")
     calculate_grades(creds)
-
 
 if __name__ == "__main__":
     main()

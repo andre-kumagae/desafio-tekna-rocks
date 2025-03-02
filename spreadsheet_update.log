@@ -1,0 +1,30 @@
+2025-03-02 12:41:53,206 - INFO - Credentials loaded from service account file.
+2025-03-02 12:41:53,602 - INFO - Attempting refresh to obtain initial access_token
+2025-03-02 12:41:53,643 - INFO - Refreshing access_token
+2025-03-02 12:41:56,836 - INFO - Fields G4:H27 cleared successfully.
+2025-03-02 12:41:57,042 - INFO - Spreadsheet data retrieved.
+2025-03-02 12:41:57,043 - INFO - Row 4: Average=53.0, Absence=0.13333333333333333, Status=Final Test
+2025-03-02 12:41:57,043 - INFO - Row 5: Average=65.66666666666667, Absence=0.13333333333333333, Status=Final Test
+2025-03-02 12:41:57,043 - INFO - Row 6: Average=64.33333333333333, Absence=0.31666666666666665, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,048 - INFO - Row 7: Average=75.33333333333333, Absence=0.38333333333333336, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,048 - INFO - Row 8: Average=62.0, Absence=0.21666666666666667, Status=Final Test
+2025-03-02 12:41:57,048 - INFO - Row 9: Average=76.0, Absence=0.38333333333333336, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,048 - INFO - Row 10: Average=57.0, Absence=0.08333333333333333, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 11: Average=79.33333333333333, Absence=0.16666666666666666, Status=Approved
+2025-03-02 12:41:57,049 - INFO - Row 12: Average=58.0, Absence=0.25, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 13: Average=52.666666666666664, Absence=0.2, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 14: Average=63.0, Absence=0.18333333333333332, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 15: Average=64.0, Absence=0.21666666666666667, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 16: Average=78.33333333333333, Absence=0.31666666666666665, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,049 - INFO - Row 17: Average=52.0, Absence=0.16666666666666666, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 18: Average=69.0, Absence=0.26666666666666666, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,049 - INFO - Row 19: Average=50.0, Absence=0.1, Status=Final Test
+2025-03-02 12:41:57,049 - INFO - Row 20: Average=60.0, Absence=0.26666666666666666, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,049 - INFO - Row 21: Average=70.66666666666667, Absence=0.03333333333333333, Status=Approved
+2025-03-02 12:41:57,049 - INFO - Row 22: Average=43.333333333333336, Absence=0.13333333333333333, Status=Failed by Grade
+2025-03-02 12:41:57,049 - INFO - Row 23: Average=90.33333333333333, Absence=0.36666666666666664, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,050 - INFO - Row 24: Average=75.33333333333333, Absence=0.38333333333333336, Status=AbsentFailed for Absence
+2025-03-02 12:41:57,050 - INFO - Row 25: Average=77.66666666666667, Absence=0.25, Status=Approved
+2025-03-02 12:41:57,050 - INFO - Row 26: Average=73.0, Absence=0.15, Status=Approved
+2025-03-02 12:41:57,050 - INFO - Row 27: Average=76.33333333333333, Absence=0.0, Status=Approved
+2025-03-02 12:41:57,337 - INFO - Spreadsheet updated successfully.

@@ -60,10 +60,10 @@ Create an application in a programming language of your choice (if you are apply
     git clone https://github.com/andre-kumagae/desafio-tekna-rocks.git
 ```
 
-* Install the required Google libraries:
+* Install the required Google libraries on your IDE/Editor or if you're using Python terminal, run this command:
 
 ```bash
-    pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+    pip install oauth2client google-api-python-client google-auth google-auth-oauthlib google-auth-httplib2
 ```
 * Open the Spreadsheet: https://docs.google.com/spreadsheets/d/1hoY87CzLOdPwfl31fR1gFkP7SJvvwz0Mm9_W5ht9OF8/edit?gid=0#gid=0
 
@@ -80,12 +80,11 @@ Create an application in a programming language of your choice (if you are apply
 * Packages required to connect to the Google Sheets API according to the documentation:
 
 ```
-import os.path
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
+from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+import math
+import logging
 ```
 
 * Package used to round up the average result:
@@ -108,6 +107,7 @@ import logging
 | `SPREADSHEET_ID` | `string` | Spreadsheet's ID. |
 | `CLEAR_RANGE` | `string` | Table range to clear before calculation.  |
 | `CLEAR_RANGE` | `string` | Table range to calculate.  |
+| `SERVICE_ACCOUNT_FILE` | `json` | Service account file  |
 
 ### Methods
 
@@ -155,10 +155,13 @@ Receive a parameter named creds to get the credential to access the spreadsheet:
 
 ### main()
 
-Authorize the access to the spreadsheet with the credentials.json and token.js files.
+Authorize the access to the spreadsheet with the Acoount service's token.json.
 
 ## References
 
  - [Python quickstart](https://developers.google.com/sheets/api/quickstart/python)
  - [Google Sheets API Overview](https://developers.google.com/sheets/api/guides/concepts)
+ - [oauth2client — oauth2client 4.1.2 documentation](https://oauth2client.readthedocs.io/en/latest/index.html)
+ - [googleapiclient](https://googleapis.github.io/google-api-python-client/docs/epy/googleapiclient-module.html)
+ - [Python Documentation contents — Python 3.13.2 documentation](https://docs.python.org/3/contents.html)
 

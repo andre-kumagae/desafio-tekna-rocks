@@ -109,7 +109,7 @@ import logging
 | `SPREADSHEET_ID` | `string` | Spreadsheet's ID. |
 | `CLEAR_RANGE` | `string` | Table range to clear before calculation.  |
 | `CLEAR_RANGE` | `string` | Table range to calculate.  |
-| `SERVICE_ACCOUNT_INFO` | `dictionary` | Dictionary to get the credentials to the account service credentials  |
+| `SERVICE_ACCOUNT_INFO` | `dictionary` | Dictionary to get the account service's credentials  |
 
 ### Methods
 

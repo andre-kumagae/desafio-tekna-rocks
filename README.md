@@ -52,26 +52,31 @@ Create an application in a programming language of your choice (if you are apply
 
 ## Installation
 
-* Install Python on your machine: https://www.python.org/
+1. Install Python on your machine: https://www.python.org/
 
-* Download all files of this repository by clicking the green button above named "<> Code", and then "Download ZIP" or you can clone this project using the GIT command bellow;
+2. Download all files of this repository by clicking the green button above named "<> Code", and then "Download ZIP" or you can clone this project using the GIT command bellow;
 
 ```bash
     git clone https://github.com/andre-kumagae/desafio-tekna-rocks.git
 ```
 
-* Install the required Google libraries on your IDE/Editor or if you're using Python terminal, run this command:
+3. Install the required Google libraries on your IDE/Editor or if you are using a terminal, run this command:
 
 ```bash
     pip install oauth2client google-api-python-client google-auth google-auth-oauthlib google-auth-httplib2 python-dotenv
 ```
-* Open the Spreadsheet: https://docs.google.com/spreadsheets/d/1hoY87CzLOdPwfl31fR1gFkP7SJvvwz0Mm9_W5ht9OF8/edit?gid=0#gid=0
+4. Open the Spreadsheet to view the result: https://docs.google.com/spreadsheets/d/1hoY87CzLOdPwfl31fR1gFkP7SJvvwz0Mm9_W5ht9OF8/edit?gid=0#gid=0
 
-* Run the file main.py on a Python IDE/editor or on a console by using this command below: 
+5. Run the file main.py on your Python IDE/editor. You can also run it by double-clicking the file or on a console by using this command below: 
 
 ```bash
     python main.py
 ```
+
+## Demonstration
+
+![example](https://github.com/user-attachments/assets/aee30734-0d0f-417f-81cc-4001d4ecaf34)
+
 
 ## API Documentation
 
